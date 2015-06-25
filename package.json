@@ -42,6 +42,7 @@
   "dependencies": {
     "broccoli-writer": "^0.1.1",
     "globby": "^2.0.0",
+    "mkdirp": "^0.5.1",
     "rsvp": "^3.0.18"
   }
 }

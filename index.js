@@ -5,6 +5,7 @@ var path = require('path');
 var Writer = require('broccoli-writer');
 var globby = require('globby');
 var RSVP = require('rsvp');
+var mkdirp = require('mkdirp');
 
 var CssMyIcons = function CssMyIcons(inputTree, options) {
   if (!(this instanceof CssMyIcons)) {
@@ -16,6 +17,7 @@ var CssMyIcons = function CssMyIcons(inputTree, options) {
   this.inputTree = inputTree;
   this.files = options.files || [];
   this.dest = options.dest || 'style.css';
+  this.destDir = options.destDir || '';
 };
 
 CssMyIcons.prototype = Object.create(Writer.prototype);
@@ -37,8 +39,16 @@ CssMyIcons.prototype.write = function(readTree, destDir) {
             icons += getCSS(el);
           });
 
-          fs.writeFile(path.join(destDir, self.dest), icons, function() {
-            resolve();
+          var dir = path.join(destDir, self.destDir);
+
+          mkdirp(dir, function(err) {
+            if (err) {
+              throw new Error(err);
+            } else {
+              fs.writeFile(path.join(destDir, self.destDir, self.dest), icons, function() {
+                resolve();
+              });
+            }
           });
         });
       } catch(e) {
