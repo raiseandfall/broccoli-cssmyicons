@@ -23,7 +23,8 @@ var cssMyIcons = require('broccoli-cssmyicons');
 var tree = cssMyIcons(app, {
   files: ['*.svg'],
   dest: 'icons.css',
-  destDir: 'assets/style'
+  destDir: 'assets/style',
+  prefixPath: '/'
 });
 ```
 
@@ -32,23 +33,30 @@ var tree = cssMyIcons(app, {
 ### cssMyIcons(tree, options)
 
 #### options.files
-Type: `Array` 
+Type: `Array`  
 _Required_
 
 This option is the glob of the svg folders.
 
 #### options.dest
-Type: `String` 
-_Optional_ 
+Type: `String`  
+_Optional_  
 **Default** style.css
 
 Path to the CSS file to export to.
 
 #### options.destDir
-Type: `String` 
-_Optional_ 
+Type: `String`  
+_Optional_  
 
 Destination directory to export the CSS file to.
+
+#### options.prefixPath
+Type: `String`  
+_Optional_  
+
+Prefix to add at the beginning of the icons path
+
 
 ## CONTRIBUTE
 ```shell

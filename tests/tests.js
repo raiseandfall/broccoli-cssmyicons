@@ -45,4 +45,21 @@ describe('broccoli cssmyicons', function() {
       expect(actual).to.equal(expected);
     });
   });
+
+  it('should generate icons path with a prefix to the path', function() {
+    var tree = cssMyIcons('tests/fixtures', {
+      files: ['*.svg'],
+      dest: 'icons.css',
+      destDir: 'assets/style',
+      prefixPath: '/'
+    });
+
+    builder = new broccoli.Builder(tree);
+
+    return builder.build().then(function(dir) {
+      var actual = fs.readFileSync(path.join(dir.directory, 'assets/style/icons.css'), {encoding: 'utf8'});
+      var expected = fs.readFileSync('tests/mocks/icons-prefix.css', {encoding: 'utf8'});
+      expect(actual).to.equal(expected);
+    });
+  });
 });

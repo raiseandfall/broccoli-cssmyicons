@@ -18,6 +18,7 @@ var CssMyIcons = function CssMyIcons(inputTree, options) {
   this.files = options.files || [];
   this.dest = options.dest || 'style.css';
   this.destDir = options.destDir || '';
+  this.prefixPath = options.prefixPath || '';
 };
 
 CssMyIcons.prototype = Object.create(Writer.prototype);
@@ -36,7 +37,7 @@ CssMyIcons.prototype.write = function(readTree, destDir) {
         globby(fil, {}, function(err, files) {
           var icons = '';
           files.forEach(function(el) {
-            icons += getCSS(el);
+            icons += getCSS(el, self.prefixPath);
           });
 
           var dir = path.join(destDir, self.destDir);
@@ -58,12 +59,12 @@ CssMyIcons.prototype.write = function(readTree, destDir) {
   });
 };
 
-var getCSS = function(el) {
+var getCSS = function(el, prefix) {
   // Path
   var path = el.split('/'),
     file = path[path.length-1].split('.'),
     filenameNoExt = file[0],
-    relativePath = el;
+    relativePath = prefix + el;
   return '.icon-' + filenameNoExt + '{background-image:url("' + relativePath + '");background-repeat:no-repeat;}';
 };
 
