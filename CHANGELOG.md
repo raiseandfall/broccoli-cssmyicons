@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.2.2
+- [TEST] Added node 4.0 & 4.2 on travis config
+
 ## 1.2.1
 - [DOC] Added links to Grunt & Gulp versions
 
