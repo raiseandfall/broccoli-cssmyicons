@@ -28,6 +28,7 @@
     "type": "git",
     "url": "git@github.com:raiseandfall/broccoli-cssmyicons.git"
   },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/raiseandfall/broccoli-cssmyicons/issues"
   },
