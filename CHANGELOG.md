@@ -1,7 +1,7 @@
 # CHANGELOG
 
-## 1.2.3
-- [TEST] Added node 5.0 & 5.5 on travis config
+## 1.2.4
+- [TEST] Added node 5.0 on travis config
 
 ## 1.2.2
 - [TEST] Added node 4.0 & 4.2 on travis config
