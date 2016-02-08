@@ -1,6 +1,6 @@
 {
   "name": "broccoli-cssmyicons",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Broccoli plugin to generate a CSS for SVG icons",
   "scripts": {
     "hint": "jshint --reporter=node_modules/jshint-stylish index.js",
