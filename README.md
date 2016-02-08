@@ -1,4 +1,6 @@
-# CSS my icons  [![Build Status](https://travis-ci.org/raiseandfall/broccoli-cssmyicons.svg)](https://travis-ci.org/raiseandfall/broccoli-cssmyicons)
+# CSS my icons  
+
+[![Build Status](https://travis-ci.org/raiseandfall/broccoli-cssmyicons.svg)](https://travis-ci.org/raiseandfall/broccoli-cssmyicons)
 
 > Broccoli plugin to generate a CSS file for SVG icons used as background-image:
 
